@@ -1,0 +1,23 @@
+site:
+  title: OpenShift Docs Training Site
+  start_page: openshift-docs::index.adoc
+
+content:
+  sources:
+    - url: ../openshift-docs
+      branches: [HEAD]
+      start_path: docs
+    - url: ../ocp-networking-docs
+      branches: [HEAD]
+      start_path: docs
+    - url: ../ocp-security-docs
+      branches: [HEAD]
+      start_path: docs
+
+ui:
+  bundle:
+    url: https://github.com/antora/antora-ui-default/releases/latest/download/ui-bundle.zip
+    snapshot: true
+
+output:
+  dir: ../public
