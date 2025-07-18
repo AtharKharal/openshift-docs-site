@@ -1,0 +1,60 @@
+# Antora build output (if mistakenly built inside component)
+public/
+build/
+_site/
+
+# Node.js (in case someone installs npm packages locally)
+node_modules/
+package-lock.json
+npm-debug.log
+yarn.lock
+
+# Logs and runtime data
+*.log
+*.tmp
+*.pid
+*.seed
+*.bak
+
+# Editor and OS-specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Backup files
+*.bak
+*.old
+*.orig
+
+# Git
+.gitignore
+.gitattributes
+
+# AsciiDoc preview cache (if any tools used)
+.cache/
+.adoc-preview/
+
+# Optional: prevent accidental inclusion of large image/media assets
+# Uncomment to enforce tighter repo size control
+# docs/modules/ROOT/images/*.png
+# docs/modules/ROOT/attachments/*
+
+# Optional: exclude site generator tooling if mistakenly added
+site-generator/
+antora-playbook.yml

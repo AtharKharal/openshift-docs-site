@@ -4,14 +4,14 @@ site:
 
 content:
   sources:
-    - url: ../openshift-docs
-      branches: [HEAD]
+    - url: https://github.com/AtharKharal/openshift-docs.git
+      branches: [main]
       start_path: docs
-    - url: ../ocp-networking-docs
-      branches: [HEAD]
+    - url: https://github.com/AtharKharal/ocp-networking-docs.git
+      branches: [main]
       start_path: docs
-    - url: ../ocp-security-docs
-      branches: [HEAD]
+    - url: https://github.com/AtharKharal/ocp-security-docs.git
+      branches: [main]
       start_path: docs
 
 ui:
