@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security Policies :: OpenShift Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article security-policies">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OpenShift Documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocp-security" data-version="4.14">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="policies.html">Security Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="policies.html">Security Policies</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Security Docs</span>
+    <span class="version">4.14</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <div class="title"><a href="../../ocp-networking/4.14/index.html">Networking Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ocp-networking/4.14/index.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <div class="title"><a href="policies.html">Security Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="policies.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="policies.html">Security Docs</a></li>
+    <li><a href="policies.html">Security Policies</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-security-docs/edit/main/docs/modules/ROOT/pages/policies.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security Policies</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document outlines the security policies governing the development, deployment, and maintenance of this system. All personnel and stakeholders must comply with these guidelines to ensure confidentiality, integrity, and availability of information and infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_access_control"><a class="anchor" href="#_1_access_control"></a>1. Access Control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All access to systems and data must follow the principle of least privilege.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users must authenticate using multi-factor authentication (MFA).</p>
+</li>
+<li>
+<p>Role-based access control (RBAC) must be enforced for all services.</p>
+</li>
+<li>
+<p>Temporary access (e.g., for contractors) must be time-bound and logged.</p>
+</li>
+<li>
+<p>Shared accounts are strictly prohibited.</p>
+</li>
+<li>
+<p>Access reviews are conducted quarterly.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_data_protection"><a class="anchor" href="#_2_data_protection"></a>2. Data Protection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sensitive data must be stored, processed, and transmitted securely.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data at rest must be encrypted using AES-256 or stronger.</p>
+</li>
+<li>
+<p>Data in transit must use TLS 1.2+.</p>
+</li>
+<li>
+<p>All personally identifiable information (PII) must be masked or anonymized where appropriate.</p>
+</li>
+<li>
+<p>Backups must be encrypted and tested monthly for recoverability.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_secure_development"><a class="anchor" href="#_3_secure_development"></a>3. Secure Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Development processes must integrate security from the start.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All code repositories must use signed commits and enforce branch protection.</p>
+</li>
+<li>
+<p>Static code analysis tools (e.g., SonarQube, CodeQL) must be integrated in CI.</p>
+</li>
+<li>
+<p>Dependencies must be vetted and updated regularly; known vulnerabilities must be remediated within 7 days.</p>
+</li>
+<li>
+<p>Secrets must never be hardcoded and must be stored using a secret manager (e.g., Vault, AWS Secrets Manager).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_incident_response"><a class="anchor" href="#_4_incident_response"></a>4. Incident Response</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every security incident must be logged, triaged, and resolved through a documented process.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An incident response plan (IRP) must be in place and reviewed biannually.</p>
+</li>
+<li>
+<p>Incidents must be categorized by severity and tracked via an incident management system.</p>
+</li>
+<li>
+<p>Forensics must be initiated within 2 hours of a critical breach.</p>
+</li>
+<li>
+<p>Post-incident reviews must produce a root cause analysis (RCA) and corrective actions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_logging_and_monitoring"><a class="anchor" href="#_5_logging_and_monitoring"></a>5. Logging and Monitoring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Continuous monitoring is required to detect and respond to threats.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Centralized logging must be implemented using a secure, tamper-evident system (e.g., ELK, Splunk).</p>
+</li>
+<li>
+<p>Logs must be retained for a minimum of 90 days.</p>
+</li>
+<li>
+<p>All login attempts, file access, and privilege escalations must be logged.</p>
+</li>
+<li>
+<p>Anomalous behavior must trigger alerts via a Security Information and Event Management (SIEM) platform.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_endpoint_security"><a class="anchor" href="#_6_endpoint_security"></a>6. Endpoint Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All endpoints must be hardened, monitored, and updated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Anti-malware software must be installed and updated automatically.</p>
+</li>
+<li>
+<p>USB access must be disabled unless explicitly approved.</p>
+</li>
+<li>
+<p>Devices must auto-lock after 5 minutes of inactivity.</p>
+</li>
+<li>
+<p>Operating systems and software must be patched within 72 hours of critical vulnerability disclosure.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_physical_security"><a class="anchor" href="#_7_physical_security"></a>7. Physical Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Physical access to infrastructure and equipment must be strictly controlled.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data centers must implement 24/7 surveillance and biometric access control.</p>
+</li>
+<li>
+<p>Visitor access must be logged and supervised at all times.</p>
+</li>
+<li>
+<p>Workstations must not be left unattended in unlocked state.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_8_third_party_risk_management"><a class="anchor" href="#_8_third_party_risk_management"></a>8. Third-Party Risk Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vendors and service providers must meet defined security standards.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A security review is required before onboarding any third-party vendor.</p>
+</li>
+<li>
+<p>Data processing agreements (DPAs) must be signed where applicable.</p>
+</li>
+<li>
+<p>Annual compliance checks are mandatory for high-risk vendors.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_9_policy_review_and_compliance"><a class="anchor" href="#_9_policy_review_and_compliance"></a>9. Policy Review and Compliance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These policies are reviewed semi-annually by the Security Committee.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All team members must undergo security awareness training annually.</p>
+</li>
+<li>
+<p>Non-compliance may result in disciplinary action.</p>
+</li>
+<li>
+<p>Changes to policies must be documented and approved through the Change Advisory Board (CAB).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appendix_related_documents"><a class="anchor" href="#_appendix_related_documents"></a>Appendix: Related Documents</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="incident-response-plan.adoc">Incident Response Plan</a></p>
+</li>
+<li>
+<p><a href="secure-coding-guidelines.adoc">Secure Coding Guidelines</a></p>
+</li>
+<li>
+<p><a href="data-classification-policy.adoc">Data Classification Policy</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

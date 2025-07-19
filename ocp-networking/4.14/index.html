@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Networking Overview :: OpenShift Documentation</title>
+    <meta name="description" content="Overview of networking components, configuration layers, and architecture in OpenShift.">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article networking-overview">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OpenShift Documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocp-networking" data-version="4.14">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Networking Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Networking Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Networking Docs</span>
+    <span class="version">4.14</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Networking Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../ocp-security/4.14/policies.html">Security Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ocp-security/4.14/policies.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Networking Docs</a></li>
+    <li><a href="index.html">Networking Overview</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-networking-docs/edit/main/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Networking Overview</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides an architectural and operational overview of networking in OpenShift. It covers cluster network configuration, service routing, ingress and egress control, and relevant security constraints. OpenShift builds upon Kubernetes’ native networking model and extends it with enhanced routing, isolation, and observability features.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_core_networking_concepts"><a class="anchor" href="#_core_networking_concepts"></a>Core Networking Concepts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift networking is built on three interrelated layers:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Pod-to-Pod Communication (Cluster Network):</strong> Every pod receives a unique IP address. OpenShift ensures full L3 connectivity between pods across nodes, without NAT.</p>
+</li>
+<li>
+<p><strong>Service Abstraction (Virtual IPs):</strong> Services expose stable virtual IPs and DNS names for accessing dynamic sets of pods (endpoints) via kube-proxy.</p>
+</li>
+<li>
+<p><strong>Ingress and Egress (External Traffic):</strong> Ingress controllers route external HTTP(S) traffic to services; Egress policies define how pods reach outside networks.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_components"><a class="anchor" href="#_key_components"></a>Key Components</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster Network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An overlay or SDN-managed network that assigns routable IPs to all pods. Managed by OpenShift SDN, OVN-Kubernetes, or third-party CNI providers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abstractions for stable access to dynamic pod sets. Types include ClusterIP, NodePort, LoadBalancer, and ExternalName.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal DNS resolution via CoreDNS. Services and pods are assigned names such as <code>my-service.my-namespace.svc.cluster.local</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ingress Controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A managed HAProxy or Envoy-based reverse proxy that handles HTTP(S) traffic from external clients into the cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Layer 3/4 firewall rules that isolate traffic between namespaces or workloads based on labels and ports.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egress Router / Egress Firewall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mechanisms to control and monitor pod-initiated outbound traffic to external networks.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load Balancer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External load balancing provided by cloud infrastructure (e.g., AWS ELB, GCP LB) or MetalLB in bare-metal setups.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_network_plugins"><a class="anchor" href="#_supported_network_plugins"></a>Supported Network Plugins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift supports the following Container Network Interface (CNI) providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>OVN-Kubernetes:</strong> The default SDN in recent OpenShift versions. Implements native Kubernetes NetworkPolicy and supports multicast, egress IPs, and dual-stack IPv4/IPv6.</p>
+</li>
+<li>
+<p><strong>OpenShift SDN (deprecated):</strong> A legacy SDN solution, now superseded by OVN-Kubernetes.</p>
+</li>
+<li>
+<p><strong>Third-Party CNIs:</strong> Calico, Cilium, and others are available via custom installation paths, but may limit support for certain OpenShift features.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_network_policy_enforcement"><a class="anchor" href="#_network_policy_enforcement"></a>Network Policy Enforcement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift enables fine-grained control over inter-pod traffic through Kubernetes NetworkPolicies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Policies are namespace-scoped and deny-all by default if any policy exists.</p>
+</li>
+<li>
+<p>Rules match traffic using pod selectors, namespace selectors, and port specifications.</p>
+</li>
+<li>
+<p>Only CNI plugins with NetworkPolicy support (e.g., OVN-Kubernetes, Calico) can enforce these rules.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ingress_and_routing"><a class="anchor" href="#_ingress_and_routing"></a>Ingress and Routing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ingress and routing in OpenShift are managed through Routes or Ingress objects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Routes:</strong> OpenShift-specific objects that expose services via customizable hostnames, TLS termination, and path-based routing.</p>
+</li>
+<li>
+<p><strong>Ingress:</strong> Standard Kubernetes resources supported via the ingress controller.</p>
+</li>
+<li>
+<p>Wildcard routes and sticky sessions are supported.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ingress Controllers can be scaled, customized, or scoped to specific namespaces using <code>IngressController</code> CRs in <code>openshift-ingress-operator</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_egress_control_and_observability"><a class="anchor" href="#_egress_control_and_observability"></a>Egress Control and Observability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Outbound traffic is managed and monitored via:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Egress IPs:</strong> Assign static IPs to specific namespaces or pods for outbound traffic.</p>
+</li>
+<li>
+<p><strong>Egress Routers:</strong> Route traffic from pods through predefined external destinations.</p>
+</li>
+<li>
+<p><strong>Egress Firewall:</strong> Enforce allow/deny policies for external destinations.</p>
+</li>
+<li>
+<p><strong>NetFlow/IPFIX Exporters:</strong> For traffic analysis and audit.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_topics"><a class="anchor" href="#_advanced_topics"></a>Advanced Topics</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Dual-stack IPv4/IPv6 networking</strong></p>
+</li>
+<li>
+<p><strong>Multicast support</strong></p>
+</li>
+<li>
+<p><strong>MetalLB integration for on-prem L2/L3 load balancing</strong></p>
+</li>
+<li>
+<p><strong>SR-IOV and DPDK for high-performance networking</strong></p>
+</li>
+<li>
+<p><strong>Service Mesh (Istio-based):</strong> Fine-grained traffic routing, mTLS, and observability</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_resources"><a class="anchor" href="#_related_resources"></a>Related Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="networking/network-policy.adoc">Writing Network Policies</a></p>
+</li>
+<li>
+<p><a href="networking/ingress-controller.adoc">Managing Ingress Controllers</a></p>
+</li>
+<li>
+<p><a href="networking/routes-vs-ingress.adoc">Routes vs. Ingress: When to Use What</a></p>
+</li>
+<li>
+<p><a href="networking/troubleshooting-network.adoc">Troubleshooting Network Issues</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_notes"><a class="anchor" href="#_final_notes"></a>Final Notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Networking forms the backbone of cluster operation and must be configured carefully during installation. Many network settings, such as cluster CIDRs and SDN choice, are immutable post-installation.</p>
+</div>
+<div class="paragraph">
+<p>For production-grade deployments, thorough testing of ingress, egress, and network policy behavior is essential.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
