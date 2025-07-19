@@ -23,7 +23,7 @@ jobs:
           npm install -g @antora/cli@3.1
           npm install -g @antora/site-generator-default@3.1
 
-      - name: Generate Antora site
+      - name: Generate site
         run: antora antora-playbook.yml
 
       - name: Deploy to GitHub Pages
