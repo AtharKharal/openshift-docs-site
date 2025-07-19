@@ -20,8 +20,8 @@ jobs:
 
       - name: Install Antora CLI and Site Generator
         run: |
-          npm install @antora/cli
-          npm install @antora/site-generator
+          npm install -g @antora/cli
+          npm install -g @antora/site-generator-default
 
       - name: Generate site
         run: antora antora-playbook.yml
