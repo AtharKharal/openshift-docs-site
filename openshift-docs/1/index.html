@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to OpenShift by Athar Kharal :: OpenShift Documentation by Athar Kharal, PhD</title>
+    <title>🚀 Welcome to OpenShift Documentation :: OpenShift Documentation by Athar Kharal, PhD</title>
     <meta name="description" content="Main entry point for OpenShift documentation, covering installation, configuration, usage, and administration.">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -133,71 +133,126 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Welcome to OpenShift by Athar Kharal</h1>
+<h1 class="page">🚀 Welcome to OpenShift Documentation</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to the official OpenShift documentation site. OpenShift is a comprehensive, Kubernetes-powered platform for deploying and managing containerized applications at scale. This site provides in-depth guides and technical references for users, developers, and administrators.</p>
+<p>Welcome to the official <em>OpenShift</em> documentation site — your definitive resource for understanding, configuring, and operating Red Hat&#8217;s Kubernetes-powered platform.</p>
 </div>
+<div class="paragraph lead">
+<p>OpenShift empowers organizations with a <strong>hybrid-cloud-ready</strong>, developer-centric experience for deploying containerized workloads at scale.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>OpenShift simplifies complex cloud-native infrastructure by offering an integrated developer experience, enterprise-grade security, and robust automation for hybrid and multi-cloud environments.</p>
+<p>This site is a fully automated, modular, and multi-versioned documentation system powered by Antora, authored in AsciiDoc, and version-controlled via Git.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_why_openshift">🌟 Why OpenShift?</a></li>
+<li><a href="#_who_should_use_this_site">👥 Who Should Use This Site?</a></li>
+<li><a href="#_documentation_structure">📚 Documentation Structure</a></li>
+<li><a href="#_quick_start">🚦 Quick Start</a></li>
+<li><a href="#_contribute">🤝 Contribute</a></li>
+<li><a href="#_external_resources">🌐 External Resources</a></li>
+<li><a href="#_feedback">🗨️ Feedback</a></li>
+<li><a href="#_legal">📜 Legal</a></li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_key_features"><a class="anchor" href="#_key_features"></a>Key Features</h2>
+<h2 id="_why_openshift"><a class="anchor" href="#_why_openshift"></a>🌟 Why OpenShift?</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kubernetes-native orchestration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enhanced cluster automation with native workloads, custom operators, and flexible scheduling.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Integrated DevOps Tooling</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GitOps, Tekton pipelines, and developer dashboards built-in.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Security First</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Built-in Role-Based Access Control (RBAC), Security Context Constraints (SCC), and compliance-grade auditing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Observability Stack</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics, logging, and tracing with Prometheus, Grafana, and Fluentd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hybrid/Multi-Cloud Ready</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deploy to bare metal, AWS, Azure, GCP, or OpenShift Local.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenShift assumes familiarity with container orchestration and Linux-based deployments. Beginners should start with <code>Quick Start</code> below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_who_should_use_this_site"><a class="anchor" href="#_who_should_use_this_site"></a>👥 Who Should Use This Site?</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+This site serves multiple personas:
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Kubernetes-native orchestration</strong> with enhanced developer tooling.</p>
+<p><strong>Platform Engineers</strong> — Infrastructure provisioning and upgrades.</p>
 </li>
 <li>
-<p><strong>Integrated CI/CD pipelines</strong> via OpenShift Pipelines and GitOps workflows.</p>
+<p><strong>Application Developers</strong> — Building and deploying scalable workloads.</p>
 </li>
 <li>
-<p><strong>Built-in image registry</strong> and container lifecycle management.</p>
+<p><strong>SREs and DevOps</strong> — CI/CD, monitoring, alerting, and day-2 operations.</p>
 </li>
 <li>
-<p><strong>Advanced networking</strong> (SDN, ingress, service mesh).</p>
-</li>
-<li>
-<p><strong>Centralized authentication, monitoring, and logging.</strong></p>
+<p><strong>Security Teams</strong> — RBAC, Pod Security, and audit policy management.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_audience"><a class="anchor" href="#_audience"></a>Audience</h2>
+<h2 id="_documentation_structure"><a class="anchor" href="#_documentation_structure"></a>📚 Documentation Structure</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This documentation is intended for:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Platform Administrators responsible for installing, configuring, and maintaining OpenShift clusters.</p>
-</li>
-<li>
-<p>Application Developers building and deploying containerized services.</p>
-</li>
-<li>
-<p>Site Reliability Engineers (SREs) managing day-2 operations.</p>
-</li>
-<li>
-<p>Security Analysts auditing policies and access controls.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_documentation_structure"><a class="anchor" href="#_documentation_structure"></a>Documentation Structure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The OpenShift documentation is organized by topic and lifecycle stage:</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -212,67 +267,81 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="installing/index.adoc">Installation</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step-by-step instructions for installing OpenShift on supported platforms, including bare metal, AWS, Azure, GCP, and OpenShift Local.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deploy OpenShift to a cloud provider, virtualized host, or local environment.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="using/index.adoc">Using OpenShift</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Guides for developers and users: deploying applications, working with pods, services, routes, and operators.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working with Pods, Deployments, Services, and Operators.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="admin/index.adoc">Cluster Administration</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topics for configuring the control plane, managing users and quotas, networking, and storage.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuring nodes, ingress, networking, persistent storage.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="security/index.adoc">Security</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overview of access control, pod security policies, audit logs, and best practices for compliance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCCs, OAuth, RBAC, audit logs, and policy management.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="monitoring/index.adoc">Monitoring and Logging</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set up Prometheus, Grafana, Fluentd, and centralized alerting.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setup and tune Prometheus, Alertmanager, Fluentd, and Grafana dashboards.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="troubleshooting/index.adoc">Troubleshooting</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Diagnose and resolve common issues using oc, logs, and cluster tools.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagnosing pod failures, cluster state, and performance issues.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="release-notes/index.adoc">Release Notes</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version-specific changes, deprecated features, and migration guidance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Track version-specific changes and deprecated features.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_quick_start"><a class="anchor" href="#_quick_start"></a>Quick Start</h2>
+<h2 id="_quick_start"><a class="anchor" href="#_quick_start"></a>🚦 Quick Start</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>If you&#8217;re new to OpenShift, begin with the following:</p>
+<div class="paragraph text-center">
+<p>Ready to get started?</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="installing/openshift-local.adoc">Install OpenShift Local</a></p>
+<p><a href="installing/openshift-local.adoc">Install OpenShift Local in minutes</a></p>
 </li>
 <li>
 <p><a href="using/deploy-first-app.adoc">Deploy Your First Application</a></p>
 </li>
 <li>
-<p><a href="admin/basic-cluster-setup.adoc">Configure Basic Cluster Settings</a></p>
+<p><a href="admin/basic-cluster-setup.adoc">Set up Cluster Defaults</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_contributing"><a class="anchor" href="#_contributing"></a>Contributing</h2>
+<h2 id="_contribute"><a class="anchor" href="#_contribute"></a>🤝 Contribute</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This documentation is maintained by the community and Red Hat teams. Contributions are welcome via pull requests to the source repositories. Refer to the <a href="contributing/index.adoc">contribution guidelines</a> for more information.</p>
+<p>This site is maintained by both Red Hat engineers and the broader open source community.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Contributions are welcome! Please read the <a href="contributing/index.adoc">contribution guidelines</a> before submitting pull requests.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_external_resources"><a class="anchor" href="#_external_resources"></a>External Resources</h2>
+<h2 id="_external_resources"><a class="anchor" href="#_external_resources"></a>🌐 External Resources</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -280,32 +349,45 @@
 <p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift Product Page</a></p>
 </li>
 <li>
-<p><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/">Red Hat Official Documentation</a></p>
+<p><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/">Official OpenShift Docs</a></p>
 </li>
 <li>
-<p><a href="https://github.com/openshift">OpenShift GitHub Organization</a></p>
+<p><a href="https://github.com/openshift">OpenShift GitHub Repositories</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_feedback"><a class="anchor" href="#_feedback"></a>Feedback</h2>
+<h2 id="_feedback"><a class="anchor" href="#_feedback"></a>🗨️ Feedback</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To suggest improvements or report issues with this documentation, please open an issue in the respective component&#8217;s GitHub repository or contact the documentation team via the internal support channel.</p>
+<p>Found an error or want to suggest improvements?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open an issue in the relevant GitHub repo.</p>
+</li>
+<li>
+<p>Contact the documentation team through the internal support channels.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_legal_notice"><a class="anchor" href="#_legal_notice"></a>Legal Notice</h2>
+<h2 id="_legal"><a class="anchor" href="#_legal"></a>📜 Legal</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenShift is a trademark of Red Hat, Inc. This documentation is provided under the Creative Commons Attribution–ShareAlike 4.0 License unless stated otherwise.</p>
+<p>OpenShift® is a registered trademark of Red Hat, Inc.</p>
+</div>
+<div class="paragraph">
+<p>This content is licensed under the Creative Commons Attribution–ShareAlike 4.0 License unless otherwise specified.</p>
 </div>
 <hr>
-<div class="paragraph">
-<p><em>This site is powered by Antora and authored in AsciiDoc format.</em></p>
+<div class="paragraph text-center">
+<p><em>This documentation site is generated by Antora and authored in semantic, portable AsciiDoc format.</em></p>
 </div>
 </div>
 </div>
