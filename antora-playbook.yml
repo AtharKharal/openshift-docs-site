@@ -1,5 +1,5 @@
 site:
-  title: OpenShift Documentation 
+  title: OpenShift Documentation by Athar Kharal, PhD
   start_page: openshift-docs::index.adoc
 
 content:
