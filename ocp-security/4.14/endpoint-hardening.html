@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using CLI Tools :: OpenShift Documentation by Athar Kharal, PhD</title>
+    <title>Endpoint Hardening Checklist :: OpenShift Documentation by Athar Kharal, PhD</title>
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
-  <body class="article">
+  <body class="article endpoint-security">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -47,33 +47,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="openshift-docs" data-version="1">
+<div class="nav-container" data-component="ocp-security" data-version="4.14">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
     <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
-    <h3 class="title"><a href="index.html">OpenShift Core Docs</a></h3>
+    <h3 class="title"><a href="index.html">Security Docs</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="index.html">Welcome to OpenShift Docs</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="architecture.html">OpenShift Architecture</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="installing-openshift.html">Installing OpenShift</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="configuring-networking.html">Configuring Networking</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="using-cli-tools.html">Using CLI Tools</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="troubleshooting-tips.html">Troubleshooting Tips</a>
+    <a class="nav-link" href="index.html">Security Policies</a>
   </li>
 </ul>
   </li>
@@ -82,8 +67,8 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">OpenShift Core Docs</span>
-    <span class="version">1</span>
+    <span class="title">Security Docs</span>
+    <span class="version">4.14</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -94,19 +79,19 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <div class="title"><a href="index.html">OpenShift Core Docs</a></div>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">1</a>
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
         </li>
       </ul>
     </li>
-    <li class="component">
-      <div class="title"><a href="../../ocp-security/4.14/index.html">Security Docs</a></div>
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Security Docs</a></div>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../ocp-security/4.14/index.html">4.14</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">4.14</a>
         </li>
       </ul>
     </li>
@@ -118,58 +103,95 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">OpenShift Core Docs</a></li>
-    <li><a href="using-cli-tools.html">Using CLI Tools</a></li>
+    <li><a href="index.html">Security Docs</a></li>
+    <li><a href="endpoint-hardening.html">Endpoint Hardening Checklist</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/AtharKharal/openshift-docs/edit/main/docs/modules/ROOT/pages/using-cli-tools.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-security-docs/edit/main/docs/modules/ROOT/pages/endpoint-hardening.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using CLI Tools</h1>
+<h1 class="page">Endpoint Hardening Checklist</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Use <code>oc</code> and <code>kubectl</code> to manage OpenShift from the command line.</p>
+<p>Checklist for hardening laptops, workstations, and mobile devices.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_controls"><a class="anchor" href="#_configuration_controls"></a>Configuration Controls</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Auto-lock after 5 minutes.</p>
+</li>
+<li>
+<p>Disable USB by default.</p>
+</li>
+<li>
+<p>Enable full-disk encryption.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_required_software"><a class="anchor" href="#_required_software"></a>Required Software</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Tool</th>
+<th class="tableblock halign-left valign-top">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oc get pods</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all pods in the current namespace.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anti-malware</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CrowdStrike</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updated daily</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oc apply -f deployment.yaml</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Applies a deployment configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VPN Client</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WireGuard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory for remote access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patch Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WSUS or JAMF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Critical patches &lt;72 hrs</p></td>
 </tr>
 </tbody>
 </table>
-<div class="olist calloutlist">
-<ol class="calloutlist">
-<li>
-<p>Download <code>oc</code> from the OpenShift releases page.</p>
-</li>
-<li>
-<p>Add it to your <code>PATH</code>.</p>
-</li>
-<li>
-<p>Run commands from terminal.</p>
-</li>
-</ol>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Endpoints found non-compliant will be disconnected until remediated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </article>
   </div>

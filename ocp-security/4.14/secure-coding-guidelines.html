@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OpenShift Architecture :: OpenShift Documentation by Athar Kharal, PhD</title>
+    <title>Secure Coding Guidelines :: OpenShift Documentation by Athar Kharal, PhD</title>
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
-  <body class="article">
+  <body class="article secure-coding">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -47,33 +47,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="openshift-docs" data-version="1">
+<div class="nav-container" data-component="ocp-security" data-version="4.14">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
     <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
-    <h3 class="title"><a href="index.html">OpenShift Core Docs</a></h3>
+    <h3 class="title"><a href="index.html">Security Docs</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="index.html">Welcome to OpenShift Docs</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="architecture.html">OpenShift Architecture</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="installing-openshift.html">Installing OpenShift</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="configuring-networking.html">Configuring Networking</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="using-cli-tools.html">Using CLI Tools</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="troubleshooting-tips.html">Troubleshooting Tips</a>
+    <a class="nav-link" href="index.html">Security Policies</a>
   </li>
 </ul>
   </li>
@@ -82,8 +67,8 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">OpenShift Core Docs</span>
-    <span class="version">1</span>
+    <span class="title">Security Docs</span>
+    <span class="version">4.14</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -94,19 +79,19 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <div class="title"><a href="index.html">OpenShift Core Docs</a></div>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">1</a>
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
         </li>
       </ul>
     </li>
-    <li class="component">
-      <div class="title"><a href="../../ocp-security/4.14/index.html">Security Docs</a></div>
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Security Docs</a></div>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../ocp-security/4.14/index.html">4.14</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">4.14</a>
         </li>
       </ul>
     </li>
@@ -118,23 +103,34 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">OpenShift Core Docs</a></li>
-    <li><a href="architecture.html">OpenShift Architecture</a></li>
+    <li><a href="index.html">Security Docs</a></li>
+    <li><a href="secure-coding-guidelines.html">Secure Coding Guidelines</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/AtharKharal/openshift-docs/edit/main/docs/modules/ROOT/pages/architecture.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-security-docs/edit/main/docs/modules/ROOT/pages/secure-coding-guidelines.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">OpenShift Architecture</h1>
+<h1 class="page">Secure Coding Guidelines</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>This guide outlines the secure software development practices all contributors must follow.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_validation"><a class="anchor" href="#_input_validation"></a>Input Validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ensure all user inputs are sanitized and validated.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -143,51 +139,88 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This page outlines the architectural building blocks of OpenShift, including control plane and worker nodes.</p>
+<p>Use whitelisting instead of blacklisting for allowed inputs.</p>
 </div>
 </td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String cleanInput = sanitize(request.getParameter("userInput")); <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Sanitization prevents injection attacks.</td>
 </tr>
 </table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_core_components"><a class="anchor" href="#_core_components"></a>1. Core Components</h2>
+<h2 id="_authentication_best_practices"><a class="anchor" href="#_authentication_best_practices"></a>Authentication Best Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Enforce password complexity and rotation policies.</p>
+</li>
+<li>
+<p>Use OAuth2, SAML, or OpenID Connect for federated login.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avoiding_common_vulnerabilities"><a class="anchor" href="#_avoiding_common_vulnerabilities"></a>Avoiding Common Vulnerabilities</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Component</th>
-<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Vulnerability</th>
+<th class="tableblock halign-left valign-top">Mitigation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API Server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Handles REST requests and exposes the Kubernetes API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use parameterized queries.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controller Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Runs background tasks and manages desired state.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escape output in HTML templates.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">etcd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key-value store used for persistent cluster configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSRF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implement CSRF tokens.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduler</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assigns workloads (pods) to nodes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secrets in Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use secret managers.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">openshift-install create cluster --dir=install_dir --log-level=info</code></pre>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Integrate tools like CodeQL or SonarQube into CI pipelines.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

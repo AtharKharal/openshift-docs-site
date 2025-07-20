@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using CLI Tools :: OpenShift Documentation by Athar Kharal, PhD</title>
+    <title>Audit Logging Standards :: OpenShift Documentation by Athar Kharal, PhD</title>
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
-  <body class="article">
+  <body class="article audit-logging">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -47,33 +47,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="openshift-docs" data-version="1">
+<div class="nav-container" data-component="ocp-security" data-version="4.14">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
     <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
-    <h3 class="title"><a href="index.html">OpenShift Core Docs</a></h3>
+    <h3 class="title"><a href="index.html">Security Docs</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="index.html">Welcome to OpenShift Docs</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="architecture.html">OpenShift Architecture</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="installing-openshift.html">Installing OpenShift</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="configuring-networking.html">Configuring Networking</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="using-cli-tools.html">Using CLI Tools</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="troubleshooting-tips.html">Troubleshooting Tips</a>
+    <a class="nav-link" href="index.html">Security Policies</a>
   </li>
 </ul>
   </li>
@@ -82,8 +67,8 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">OpenShift Core Docs</span>
-    <span class="version">1</span>
+    <span class="title">Security Docs</span>
+    <span class="version">4.14</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -94,19 +79,19 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <div class="title"><a href="index.html">OpenShift Core Docs</a></div>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">1</a>
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
         </li>
       </ul>
     </li>
-    <li class="component">
-      <div class="title"><a href="../../ocp-security/4.14/index.html">Security Docs</a></div>
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Security Docs</a></div>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../ocp-security/4.14/index.html">4.14</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">4.14</a>
         </li>
       </ul>
     </li>
@@ -118,58 +103,80 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">OpenShift Core Docs</a></li>
-    <li><a href="using-cli-tools.html">Using CLI Tools</a></li>
+    <li><a href="index.html">Security Docs</a></li>
+    <li><a href="audit-logging-standard.html">Audit Logging Standards</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/AtharKharal/openshift-docs/edit/main/docs/modules/ROOT/pages/using-cli-tools.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-security-docs/edit/main/docs/modules/ROOT/pages/audit-logging-standard.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using CLI Tools</h1>
+<h1 class="page">Audit Logging Standards</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Use <code>oc</code> and <code>kubectl</code> to manage OpenShift from the command line.</p>
+<p>Details on how audit logs are structured, stored, and reviewed.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_format"><a class="anchor" href="#_log_format"></a>Log Format</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "timestamp": "2025-07-15T14:21:00Z",
+  "actor": "user123",
+  "action": "delete_record",
+  "resource": "db.table",
+  "ip": "192.168.1.100"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retention_policy"><a class="anchor" href="#_retention_policy"></a>Retention Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Logs are retained for 180 days minimum.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_and_review"><a class="anchor" href="#_access_and_review"></a>Access and Review</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Only auditors and administrators can access audit logs.</p>
+</li>
+<li>
+<p>Reviews occur monthly and during security incidents.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Integrate logging with centralized SIEM tools.</p>
+</div>
+</td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oc get pods</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all pods in the current namespace.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oc apply -f deployment.yaml</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Applies a deployment configuration.</p></td>
-</tr>
-</tbody>
 </table>
-<div class="olist calloutlist">
-<ol class="calloutlist">
-<li>
-<p>Download <code>oc</code> from the OpenShift releases page.</p>
-</li>
-<li>
-<p>Add it to your <code>PATH</code>.</p>
-</li>
-<li>
-<p>Run commands from terminal.</p>
-</li>
-</ol>
+</div>
+</div>
 </div>
 </article>
   </div>

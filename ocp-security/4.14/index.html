@@ -1,8 +1,482 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<script>location="policies.html"</script>
-<meta http-equiv="refresh" content="0; url=policies.html">
-<meta name="robots" content="noindex">
-<title>Redirect Notice</title>
-<h1>Redirect Notice</h1>
-<p>The page you requested has been relocated to <a href="policies.html">policies.html</a>.</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security Policies :: OpenShift Documentation by Athar Kharal, PhD</title>
+    <meta name="description" content="OpenShift Security Policy Handbook">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article security-policies">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OpenShift Documentation by Athar Kharal, PhD</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocp-security" data-version="4.14">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Security Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Security Policies</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Security Docs</span>
+    <span class="version">4.14</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <div class="title"><a href="../../ocp-networking/4.14/index.html">Networking Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ocp-networking/4.14/index.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../openshift-docs/1/index.html">OpenShift Core Docs</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../openshift-docs/1/index.html">1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Security Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">4.14</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../openshift-docs/1/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Security Docs</a></li>
+    <li><a href="index.html">Security Policies</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/AtharKharal/ocp-security-docs/edit/main/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security Policies</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>This document defines the mandatory security controls governing development, deployment, and operations. All teams must adhere to these practices to ensure compliance, mitigate risk, and maintain system integrity across all layers of the stack.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_access_control">🔐 Access Control</a></li>
+<li><a href="#_data_protection">🛡️ Data Protection</a></li>
+<li><a href="#_secure_development">🧪 Secure Development</a></li>
+<li><a href="#_incident_response">🚨 Incident Response</a></li>
+<li><a href="#_monitoring_logging">📈 Monitoring &amp; Logging</a></li>
+<li><a href="#_endpoint_security">💻 Endpoint Security</a></li>
+<li><a href="#_physical_security">🏢 Physical Security</a></li>
+<li><a href="#_third_party_risk">🤝 Third-Party Risk</a></li>
+<li><a href="#_compliance">📜 Compliance</a></li>
+<li><a href="#_appendix_related_docs">📚 Appendix: Related Docs</a></li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These policies align with NIST SP 800-53, ISO/IEC 27001, and Kubernetes security benchmarks.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_control"><a class="anchor" href="#_access_control"></a>🔐 Access Control</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Control</th>
+<th class="tableblock halign-left valign-top">Enforcement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MFA for all users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be enabled across SSO and shell access.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RBAC model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roles mapped to the minimal privilege principle using OpenShift Projects and SCCs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temporary Access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time-bound, auto-revoked, and logged in an immutable audit trail.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shared Accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Strictly prohibited</em> under all circumstances.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Review</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conducted quarterly by the IAM governance team.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Access Violation</div>
+<div class="paragraph">
+<p>All unauthorized access attempts must be logged and escalated to the InfoSec team within <strong>15 minutes</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_protection"><a class="anchor" href="#_data_protection"></a>🛡️ Data Protection</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Security Matrix</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Data Type</th>
+<th class="tableblock halign-left valign-top">Protection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At Rest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AES-256</code> encryption (e.g., LUKS, EBS encryption)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In Transit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TLS 1.2+ with forward secrecy and mutual TLS for internal APIs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stored encrypted; restored monthly; tested quarterly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PII/PHI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Masked or anonymized via irreversible hashing algorithms</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can verify TLS using <code>openssl s_client -connect host:443 -showcerts</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_secure_development"><a class="anchor" href="#_secure_development"></a>🧪 Secure Development</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">SDLC Requirements</div>
+<div class="paragraph">
+<p>All CI pipelines must embed the following security stages:</p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Pre-commit</code>: Signed commits, secret scanning</p>
+</li>
+<li>
+<p><code>CI</code>: Static and dependency scanning (SonarQube, OWASP Dependency Check)</p>
+</li>
+<li>
+<p><code>CD</code>: Image signing, CVE checks, runtime policy enforcement (e.g., OPA/Gatekeeper)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">CI/CD Pipeline Snippet (GitHub Actions)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- name: Scan for Secrets
+  uses: gitleaks/gitleaks-action@v2
+- name: SAST
+  run: sonar-scanner</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_incident_response"><a class="anchor" href="#_incident_response"></a>🚨 Incident Response</h2>
+<div class="sectionbody">
+<div class="ulist IMPORTANT">
+<div class="title">A documented IRP must exist and be tested biannually.</div>
+<ul class="IMPORTANT">
+<li>
+<p>Severity 1 incidents require triage within <strong>30 minutes</strong></p>
+</li>
+<li>
+<p>RCA must be completed within 72 hours</p>
+</li>
+<li>
+<p>IR metrics tracked: MTTD, MTTR, containment time</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Every incident is a data point. You either learn from it, or repeat it.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; NIST 800-61
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monitoring_logging"><a class="anchor" href="#_monitoring_logging"></a>📈 Monitoring &amp; Logging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All systems must log the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login attempts (success/fail)</p>
+</li>
+<li>
+<p>Privilege escalations (e.g., <code>sudo</code>, <code>oc adm</code>)</p>
+</li>
+<li>
+<p>File access to sensitive volumes</p>
+</li>
+<li>
+<p>Ingress/Egress traffic anomalies</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use a central SIEM (e.g., ELK stack or Splunk) with secure log forwarding via Fluentd.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_endpoint_security"><a class="anchor" href="#_endpoint_security"></a>💻 Endpoint Security</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Anti-malware, EDR (CrowdStrike, SentinelOne) required on all endpoints</p>
+</li>
+<li>
+<p>USB interfaces must be disabled by policy</p>
+</li>
+<li>
+<p>OS auto-updates must be enforced via Group Policy or MDM</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>| Endpoint | Protection | Patch SLA
+| Dev Laptops | EDR + FDE | 72 hrs
+| Kiosk Terminals | Hardened OS image | Weekly scan
+| Servers | Auto-patch + SIEM | Immediate for CVSS &gt; 7.0</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_physical_security"><a class="anchor" href="#_physical_security"></a>🏢 Physical Security</h2>
+<div class="sectionbody">
+<div class="imageblock unresolved text-center">
+<div class="content">
+<img src="images/datacenter-access.svg" alt="Data Center Access Control" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access via biometric + ID badge</p>
+</li>
+<li>
+<p>CCTV active 24x7; logs retained for 1 year</p>
+</li>
+<li>
+<p>No unescorted visitor access allowed</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_third_party_risk"><a class="anchor" href="#_third_party_risk"></a>🤝 Third-Party Risk</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Risk assessment and due diligence required pre-contract</p>
+</li>
+<li>
+<p>DPA must be signed and stored in vendor registry</p>
+</li>
+<li>
+<p>Vendors handling sensitive data undergo annual security review</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compliance"><a class="anchor" href="#_compliance"></a>📜 Compliance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every employee must:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Complete annual security awareness training</p>
+</li>
+<li>
+<p>Acknowledge security policy receipt</p>
+</li>
+<li>
+<p>Pass phishing simulation test (90% threshold)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph text-muted">
+<p><em>Policy version: 2025.07 — Maintained by the Security Governance Team</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appendix_related_docs"><a class="anchor" href="#_appendix_related_docs"></a>📚 Appendix: Related Docs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="incident-response-plan.html" class="xref page">Incident Response Plan</a></p>
+</div>
+<div class="paragraph">
+<p><a href="secure-coding-guidelines.html" class="xref page">Secure Coding Guidelines</a></p>
+</div>
+<div class="paragraph">
+<p><a href="data-classification-policy.html" class="xref page">Data Classification Policy</a></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>This document is authored in AsciiDoc, generated via Antora, and complies with OpenShift security standards.</em></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
